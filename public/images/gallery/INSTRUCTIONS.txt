@@ -1,0 +1,50 @@
+GALLERY IMAGES FOLDER
+=====================
+
+Place 6 images here to display in the "Visual Excellence" section.
+
+Required Files:
+--------------
+1.jpg  - First gallery image
+2.jpg  - Second gallery image
+3.jpg  - Third gallery image
+4.jpg  - Fourth gallery image
+5.jpg  - Fifth gallery image
+6.jpg  - Sixth gallery image
+
+Recommended Specifications:
+--------------------------
+Format:     JPG, PNG, or WebP
+Size:       800x600 pixels (4:3 aspect ratio)
+File Size:  < 500KB each (compressed)
+Quality:    High-quality photos or graphics
+
+Tips:
+-----
+1. Use landscape-oriented images (4:3 ratio)
+2. Compress images before adding (use tinypng.com)
+3. Keep filenames exactly as shown (1.jpg, 2.jpg, etc.)
+4. Images will automatically appear when you refresh the page
+5. Hover over images to see title and number overlay
+
+Current Titles:
+--------------
+1.jpg - "Project Alpha"
+2.jpg - "Project Beta"
+3.jpg - "Project Gamma"
+4.jpg - "Project Delta"
+5.jpg - "Project Epsilon"
+6.jpg - "Project Zeta"
+
+To change titles, edit: src/components/Gallery.jsx
+
+Fallback:
+---------
+If images are not found, colorful gradients will display instead.
+
+After Adding Images:
+-------------------
+1. Save images in this folder
+2. Refresh your browser (http://localhost:5174)
+3. Scroll to "Visual Excellence" section
+4. Images will appear with scroll animations!

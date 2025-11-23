@@ -1,0 +1,206 @@
+.showcase {
+  position: relative;
+  padding: 8rem 2rem;
+  overflow: hidden;
+  background: #21252C;
+}
+
+.showcase-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 50%,
+      rgba(99, 102, 241, 0.05),
+      transparent 50%);
+  pointer-events: none;
+}
+
+.showcase-title {
+  text-align: center;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  margin-bottom: 5rem;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Force 3 columns */
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.showcase-card {
+  position: relative;
+  padding: 3rem 2.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.showcase-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg,
+      var(--card-color, #6366f1) 0%,
+      transparent 70%);
+  opacity: 0.05;
+  transition: opacity 0.4s ease;
+}
+
+.showcase-card:hover::before {
+  opacity: 0.15;
+}
+
+.card-bg-glow {
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle,
+      var(--card-color, #6366f1) 0%,
+      transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.showcase-card:hover .card-bg-glow {
+  opacity: 0.2;
+}
+
+.card-image-container {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  filter: brightness(0.9);
+}
+
+.showcase-card:hover .card-image {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+.card-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  filter: drop-shadow(0 0 20px var(--card-color, #6366f1));
+  transition: transform 0.4s ease;
+}
+
+.showcase-card:hover .card-icon {
+  transform: scale(1.1) translateZ(20px);
+}
+
+.card-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg,
+      #ffffff 0%,
+      var(--card-color, #6366f1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.card-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  transform: translateZ(30px);
+}
+
+.card-gradient-border {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg,
+      var(--card-color, #6366f1),
+      transparent 50%,
+      var(--card-color, #6366f1));
+  border-radius: 30px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.showcase-card:hover .card-gradient-border {
+  opacity: 0.5;
+}
+
+.card-shine-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent);
+  transition: left 0.6s ease;
+  transform: skewX(-20deg);
+}
+
+.showcase-card:hover .card-shine-effect {
+  left: 150%;
+}
+
+.showcase-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase {
+    padding: 5rem 1.5rem;
+  }
+
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .showcase-title {
+    margin-bottom: 3rem;
+  }
+
+  .showcase-card {
+    padding: 2.5rem 2rem;
+  }
+}
