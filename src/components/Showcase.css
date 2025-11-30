@@ -3,10 +3,23 @@
   padding: 8rem 2rem;
   overflow: hidden;
   background: #21252C;
+  z-index: 1;
+}
+
+
+.balatro-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.6;
 }
 
 .showcase-bg {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -15,6 +28,12 @@
       rgba(99, 102, 241, 0.05),
       transparent 50%);
   pointer-events: none;
+}
+
+
+.showcase .container {
+  position: relative;
+  z-index: 2;
 }
 
 .showcase-title {

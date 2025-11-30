@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Balatro from './Balatro'
 import './CTA.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -77,6 +78,21 @@ const CTA = () => {
 
   return (
     <section className="cta" ref={ctaRef}>
+      <div className="balatro-background">
+        <Balatro
+          isRotate={false}
+          mouseInteraction={true}
+          pixelFilter={700}
+          color1="#D4A857"
+          color2="#1a1a2e"
+          color3="#000000"
+          contrast={3.0}
+          lighting={0.5}
+          spinAmount={0.3}
+          spinSpeed={5.0}
+        />
+      </div>
+
       <div className="cta-background">
         <div className="cta-circle" ref={(el) => (circlesRef.current[0] = el)}></div>
         <div className="cta-circle-2" ref={(el) => (circlesRef.current[1] = el)}></div>

@@ -2,6 +2,7 @@
   position: relative;
   padding: 8rem 2rem;
   background: #21252C;
+  z-index: 1;
 }
 
 .gallery-title {
